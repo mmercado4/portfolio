@@ -5,15 +5,19 @@ import sunIcon from "public/icons/sun.svg";
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useThemeToggle();
 
+  const isDarkTheme = theme === "dark";
+
   const sliderTrackStyles = [
-    "relative",
+    "absolute",
+    "top-0",
+    "left-0",
     "rounded-full",
     "cursor-pointer",
     "h-full",
     "w-full",
     "flex",
     "items-center",
-    theme === "dark" ? "bg-dark" : "bg-gray-100",
+    isDarkTheme ? "bg-dark" : "bg-gray-100",
     "border",
     "border-input-border",
   ];
@@ -28,8 +32,8 @@ const ThemeToggle = () => {
     "left-0.5",
     "transition-all",
     "duration-400",
-    theme === "dark" ? "translate-x-[26px]" : "",
-    theme === "dark" ? "bg-black" : "bg-white",
+    isDarkTheme ? "translate-x-[26px]" : "",
+    isDarkTheme ? "bg-black" : "bg-white",
     "flex",
     "items-center",
     "justify-center",
@@ -37,12 +41,7 @@ const ThemeToggle = () => {
 
   return (
     <label className="inline-block h-7 w-14 relative">
-      <input
-        type="checkbox"
-        checked={theme === "dark"}
-        id="switch"
-        className="h-0 w-0 opacity-0 peer"
-      />
+      <input type="checkbox" id="switch" className="h-0 w-0 opacity-0 peer" />
       <div onClick={toggleTheme} className={`${sliderTrackStyles.join(" ")}`}>
         <div className={sliderThumbStyles.join(" ")}>
           <img
