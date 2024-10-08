@@ -7,9 +7,9 @@ export const defaultLang = "en";
 
 export const ui = {
   en: {
-    Hello: "Hello",
+    "Hello!": "Hello",
   },
   es: {
-    Hello: "Hola",
+    "Hello!": "Hola",
   },
 } as const;
