@@ -1,9 +1,9 @@
-import { useThemeToggle } from "@hooks/useThemeToggle";
+import { useTheme } from "@hooks/useTheme";
 import moonIcon from "public/icons/moon.svg";
 import sunIcon from "public/icons/sun.svg";
 
 const ThemeToggle = () => {
-  const { theme, toggleTheme } = useThemeToggle();
+  const { theme, toggleTheme } = useTheme();
 
   const isDarkTheme = theme === "dark";
 
@@ -39,6 +39,8 @@ const ThemeToggle = () => {
     "justify-center",
   ];
 
+  if (!theme) return null;
+
   return (
     <label className="inline-block h-7 w-14 relative">
       <input type="checkbox" id="switch" className="h-0 w-0 opacity-0 peer" />
@@ -47,7 +49,7 @@ const ThemeToggle = () => {
           <img
             src={theme === "dark" ? moonIcon.src : sunIcon.src}
             className="w-4 h-4"
-            alt="theme mode icon"
+            alt="theme-mode-icon"
           />
         </div>
       </div>

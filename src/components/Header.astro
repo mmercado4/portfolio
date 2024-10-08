@@ -1,0 +1,10 @@
+---
+import ThemeToggle from '@components/ThemeToggle.tsx';
+import LanguagePicker from '@components/LanguagePicker.astro';
+---
+
+<header class="container mx-auto flex justify-end h-12 py-4 gap-4">
+  <ThemeToggle client:load />
+  <LanguagePicker />
+</header>
+
