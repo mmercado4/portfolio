@@ -15,18 +15,20 @@ const getYearsOfExperience = () => {
 const yearsOfExperience = getYearsOfExperience();
 ---
 
-<div class="flex items-center gap-7 mt-12 max-w-3xl">
+<div class="flex items-center gap-5 sm:gap-7 mt-12 max-w-3xl text-center sm:text-left mb-5">
   <div
-    class="rounded-full flex-shrink-0 bg-green-400 w-24 h-24 flex items-center justify-center overflow-hidden"
+    class="rounded-full flex-shrink-0 bg-green-400 w-24 h-24 sm:w-32 sm:h-32 flex justify-center overflow-hidden"
   >
     <img src="/imgs/miguel_avatar.png" class="w-40 max-w-none translate-x-2 rotate-12" alt="Miguel Mercado" />
   </div>
   <div>
-    <h1 class="text-5xl flex-1 font-bold tracking-tigh flex items-center gap-2">
-      <span>{t("Hi! I'm Miguel")}</span>
-      <img src="/gifs/wave.gif" class="w-14 max-w-none" alt="wave" />
-    </h1>
-    <h2 class="text-2xl font-bold tracking-wide">
+    <div class="flex items-center gap-2 sm:gap-4 mb-2 sm:mb-4">
+      <h1 class="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tigh">
+        {t("Hi! I'm Miguel")}
+      </h1>
+      <img src="/gifs/wave.gif" class="sm:w-14 w-8 max-w-none" alt="wave" />
+    </div>
+    <h2 class="text-lg sm:text-xl text-left tracking-wide">
       <span>{t('{years} years experienced Full Stack Developer', { years: yearsOfExperience })}.</span>
       <span>{t('Addicted to software development and building new things.')}</span>
     </h2>

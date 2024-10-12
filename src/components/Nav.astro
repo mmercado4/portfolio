@@ -2,8 +2,10 @@
 const toggleButtonStyles: string[] = ['h-2', 'w-2', 'rotate-45', 'border-b-2', 'border-r-2', 'border-dark'];
 ---
 
-<nav class="fixed top-0 left-1/2 -translate-x-1/2 -translate-y-14 hover:translate-y-0 transition-all">
-  <div class="flex items-center gap-4 justify-center h-14">
+<nav
+  class="fixed top-0 left-1/2 -translate-x-1/2 -translate-y-14 hover:translate-y-0 transition-all z-10 w-full sm:w-auto"
+>
+  <div class="flex items-center gap-4 justify-center h-14 dark:bg-dark bg-light">
     <div
       id="nav-about"
       class="nav-btn cursor-pointer px-2 py-1 border border-transparent hover:border-white rounded-full transition-all"
