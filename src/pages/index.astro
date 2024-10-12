@@ -1,16 +1,12 @@
 ---
-import Layout from '@layouts/Layout.astro';
-import Hero from '@components/Hero.astro';
-import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import Base from '@layouts/Base.astro';
+import Common from '@components/Common.astro';
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<Layout title={t('Hello!')}>
-  <main class="container mx-auto">
-    <Hero />
-  </main>
-</Layout>
-
-
+<Base title={t('Hello!')}>
+  <Common />
+</Base>

@@ -1,10 +1,7 @@
-import { useState } from "react";
-import { isValidJson } from "../utils/isValidJson";
+import { useState } from 'react';
+import { isValidJson } from '../utils/isValidJson';
 
-export const useLocalStorage = (
-  keyName: string,
-  defaultValue: string | number | null = null
-) => {
+export const useLocalStorage = (keyName: string, defaultValue: string | number | null = null) => {
   const [storedValue, setStoredValue] = useState(() => {
     try {
       const value = window.localStorage.getItem(keyName);
@@ -17,7 +14,7 @@ export const useLocalStorage = (
         }
       } else {
         let value = defaultValue;
-        if (typeof value !== "string") {
+        if (typeof value !== 'string') {
           value = JSON.stringify(value);
         }
 
@@ -33,7 +30,7 @@ export const useLocalStorage = (
   const setValue = (newValue: string | number | null) => {
     try {
       let value = newValue;
-      if (typeof value !== "string") {
+      if (typeof value !== 'string') {
         value = JSON.stringify(value);
       }
 

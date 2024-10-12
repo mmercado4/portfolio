@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
 const useMount = (callback: () => void) => {
   useEffect(callback, []);

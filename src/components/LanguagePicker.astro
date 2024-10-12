@@ -2,6 +2,13 @@
 import { getLangFromUrl } from '@i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 ---
+
 <div class="w-7 h-7 flex items-center justify-center overflow-hidden rounded-full border border-transparent">
-  {lang === 'en' ? <a href="/es" class="fi fi-es rounded-sm scale-[2]"></a> : <a href="/" class="fi fi-us rounded-sm scale-[2]"></a>}
+  {
+    lang === 'en' ? (
+      <a href="/es" class="fi fi-es rounded-sm scale-[2]" />
+    ) : (
+      <a href="/" class="fi fi-us rounded-sm scale-[2]" />
+    )
+  }
 </div>

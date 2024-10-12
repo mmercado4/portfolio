@@ -1,10 +1,34 @@
 ---
+import { useTranslations } from '@i18n/utils';
+import { getLangFromUrl } from '@i18n/utils';
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const getYearsOfExperience = () => {
+  const startDate = new Date(2020, 8, 1); // October is month 9 (0-indexed)
+  const currentDate = new Date();
+  const diffInYears = (currentDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24 * 365.25);
+  return Math.floor(diffInYears);
+};
+
+const yearsOfExperience = getYearsOfExperience();
 ---
 
-<div class="flex items-center gap-4 mt-12">
-  <div class="rounded-full bg-yellow-400 w-24 h-24 flex items-center justify-center overflow-hidden">
-    <img src="/miguel_avatar.png" class="w-40 max-w-none translate-x-2 rotate-12" alt="Miguel Mercado">
+<div class="flex items-center gap-7 mt-12 max-w-3xl">
+  <div
+    class="rounded-full flex-shrink-0 bg-green-400 w-24 h-24 flex items-center justify-center overflow-hidden"
+  >
+    <img src="/imgs/miguel_avatar.png" class="w-40 max-w-none translate-x-2 rotate-12" alt="Miguel Mercado" />
   </div>
-  <h1 class="text-4xl font-bold">Miguel Mercado</h1>
+  <div>
+    <h1 class="text-5xl flex-1 font-bold tracking-tigh flex items-center gap-2">
+      <span>{t("Hi! I'm Miguel")}</span>
+      <img src="/gifs/wave.gif" class="w-14 max-w-none" alt="wave" />
+    </h1>
+    <h2 class="text-2xl font-bold tracking-wide">
+      <span>{t('{years} years experienced Full Stack Developer', { years: yearsOfExperience })}.</span>
+      <span>{t('Addicted to software development and building new things.')}</span>
+    </h2>
+  </div>
 </div>

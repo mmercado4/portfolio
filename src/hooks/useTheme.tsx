@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
-import useMount from "./useMount";
-import { useLocalStorage } from "./useLocalStorage";
+import { useState, useEffect } from 'react';
+import useMount from './useMount';
+import { useLocalStorage } from './useLocalStorage';
 
-type Theme = "light" | "dark";
+type Theme = 'light' | 'dark';
 
 export const useTheme = () => {
-  const [localTheme, setLocalTheme] = useLocalStorage("theme", "dark");
+  const [localTheme, setLocalTheme] = useLocalStorage('theme', 'dark');
   const [theme, setTheme] = useState<Theme | null>(null);
 
   useMount(() => {
@@ -22,15 +22,15 @@ export const useTheme = () => {
   }, [theme]);
 
   const changeTheme = (theme: Theme) => {
-    const html = document.querySelector("html");
-    const isDarkTheme = theme === "dark";
+    const html = document.querySelector('html');
+    const isDarkTheme = theme === 'dark';
     if (html) {
-      isDarkTheme ? html.classList.add("dark") : html.classList.remove("dark");
+      isDarkTheme ? html.classList.add('dark') : html.classList.remove('dark');
     }
   };
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
 
   return { theme, toggleTheme };

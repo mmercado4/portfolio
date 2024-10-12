@@ -1,0 +1,42 @@
+---
+const toggleButtonStyles: string[] = ['h-2', 'w-2', 'rotate-45', 'border-b-2', 'border-r-2', 'border-dark'];
+---
+
+<nav class="fixed top-0 left-1/2 -translate-x-1/2 -translate-y-14 hover:translate-y-0 transition-all">
+  <div class="flex items-center gap-4 justify-center h-14">
+    <div
+      id="nav-about"
+      class="nav-btn cursor-pointer px-2 py-1 border border-transparent hover:border-white rounded-full transition-all"
+    >
+      About
+    </div>
+    <div id="nav-experience" class="nav-btn cursor-pointer">Experience</div>
+    <div id="nav-projects" class="nav-btn cursor-pointer">Projects</div>
+    <div id="nav-footer" class="nav-btn cursor-pointer">Footer</div>
+  </div>
+  <div class={`w-full h-8 flex items-center justify-center`}>
+    <div class={`dark:border-white ${toggleButtonStyles.join(' ')}`}></div>
+  </div>
+</nav>
+
+<script>
+  type Section = 'about' | 'experience' | 'projects' | 'footer';
+  const navButtons = document.querySelectorAll('.nav-btn');
+
+  if (navButtons.length) {
+    for (const navButton of navButtons) {
+      addClickEvent(navButton);
+    }
+  }
+
+  function addClickEvent(element: Element): void {
+    element.addEventListener('click', (event: any) => {
+      const section: Section = event.target.id.split('nav-')[1];
+      navToSection(section);
+    });
+  }
+
+  function navToSection(section: Section): void {
+    document.querySelector(`#${section}`)?.scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
