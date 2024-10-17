@@ -6,9 +6,13 @@ const lang = getLangFromUrl(Astro.url);
 <div class="w-7 h-7 flex items-center justify-center overflow-hidden rounded-full border border-transparent">
   {
     lang === 'en' ? (
-      <a href="/es" class="fi fi-es rounded-sm scale-[2]" />
+      <a href="/es" class="rounded-sm scale-[2]">
+        <img src="/images/spain.webp" alt="spain-flag" />
+      </a>
     ) : (
-      <a href="/" class="fi fi-us rounded-sm scale-[2]" />
+      <a href="/" class="rounded-sm scale-[2]">
+        <img src="/images/usa.jpg" alt="usa-flag" />
+      </a>
     )
   }
 </div>
