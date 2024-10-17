@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import { getLangFromUrl } from '@i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const educationEntries = await getCollection('education', (entry: CollectionEntry<'education'>) => {
+  return entry.slug.split('/')[0] === lang;
+});
+
+const compareEducation = (entryA: CollectionEntry<'education'>, entryB: CollectionEntry<'education'>) => {
+  return entryA.data.position > entryB.data.position ? 1 : -1;
+};
+---
+
+<div class="w-full mb-8 blur-section" id="education" style={{ '--blur-delay': '0.7s' }}>
+  <div class="text-lg font-bold mb-2">Education</div>
+  {
+    educationEntries.sort(compareEducation).map((entry: any) => (
+      <div class="flex h-fit gap-x-3 mb-3">
+        <div>
+          <a href={entry.data.url} target="_blank" rel="noopener noreferrer">
+            <div class="h-12 w-12 rounded-full relative bg-light border border-grey-line z-10 flex justify-center items-center overflow-hidden">
+              <img src={`/images/${entry.data.logo}`} class="w-9 cursor-pointer" alt="Miguel Mercado" />
+            </div>
+          </a>
+        </div>
+        <div
+          id={entry.id}
+          class="experience-item grid grid-cols-[1fr_auto_14px] grid-rows-[48px_auto] w-full gap-x-4 items-center overflow-hidden"
+        >
+          <div>
+            <div class="text-sm font-semibold">{entry.data.center}</div>
+            <div class="text-xs">{entry.data.degree}</div>
+          </div>
+          <div class="text-sm text-grey-secondary tracking-widest">{entry.data.period}</div>
+          <div class="col-span-3 max-h-0 transition-all duration-200 ease-in">
+            <span class="pt-2 inline-block text-sm opacity-0 transition-opacity duration-200">
+              {entry.body}
+            </span>
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</div>

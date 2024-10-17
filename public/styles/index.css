@@ -6,11 +6,6 @@
   animation-delay: var(--blur-delay);
 }
 
-.experience-item.open > div:last-child {
-  max-height: 100px;
-  transition: all 0.3s ease-in;
-}
-
 .experience-item.open > div:last-child > span {
   opacity: 1;
 }

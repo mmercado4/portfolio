@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-import { Fragment } from 'astro/compiler-runtime';
 import { getLangFromUrl } from '@i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 
@@ -14,7 +13,7 @@ const compareExperience = (entryA: CollectionEntry<'experience'>, entryB: Collec
 };
 ---
 
-<div class="w-full mb-6 blur-section" id="experience" style={{ '--blur-delay': '0.5s' }}>
+<div class="w-full mb-8 blur-section" id="experience" style={{ '--blur-delay': '0.5s' }}>
   <div class="text-lg font-bold mb-2">Work experience</div>
   {
     experienceEntries.sort(compareExperience).map((entry: any) => (
@@ -35,9 +34,9 @@ const compareExperience = (entryA: CollectionEntry<'experience'>, entryB: Collec
             <div class="text-xs">{entry.data.jobPosition}</div>
           </div>
           <div class="text-sm text-grey-secondary tracking-widest">{entry.data.period}</div>
-          <div class="w-2 h-2 border-b-2 border-r-2 -rotate-45 border-dark dark:border-light justify-self-center transition-all duration-300" />
+          <div class="w-2 h-2 border-b-2 border-r-2 -rotate-45 border-dark dark:border-light justify-self-center transition-all duration-200" />
           <div class="col-span-3 max-h-0 transition-all duration-200 ease-in">
-            <span class="pt-2 inline-block text-sm opacity-0 transition-opacity duration-300">
+            <span class="pt-2 inline-block text-sm opacity-0 transition-opacity duration-200">
               {entry.body}
             </span>
           </div>
@@ -49,12 +48,10 @@ const compareExperience = (entryA: CollectionEntry<'experience'>, entryB: Collec
 
 <script>
   const items = document.querySelectorAll('.experience-item');
-
   for (const item of items) {
     item.addEventListener('click', () => {
       const description = item.children[3] as HTMLDivElement;
       const descriptionHeight = description.scrollHeight;
-
       description.style.maxHeight = item.classList.contains('open') ? '0px' : `${descriptionHeight}px`;
       item.classList.contains('open') ? item.classList.remove('open') : item.classList.add('open');
     });

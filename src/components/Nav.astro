@@ -13,6 +13,7 @@ const toggleButtonStyles: string[] = ['h-2', 'w-2', 'rotate-45', 'border-b-2', '
       About
     </div>
     <div id="nav-experience" class="nav-btn cursor-pointer">Experience</div>
+    <div id="nav-education" class="nav-btn cursor-pointer">Education</div>
     <div id="nav-projects" class="nav-btn cursor-pointer">Projects</div>
     <div id="nav-footer" class="nav-btn cursor-pointer">Footer</div>
   </div>
@@ -39,6 +40,8 @@ const toggleButtonStyles: string[] = ['h-2', 'w-2', 'rotate-45', 'border-b-2', '
   }
 
   function navToSection(section: Section): void {
-    document.querySelector(`#${section}`)?.scrollIntoView({ behavior: 'smooth' });
+    document
+      .querySelector(`#${section}`)
+      ?.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
   }
 </script>
