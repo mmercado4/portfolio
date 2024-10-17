@@ -1,0 +1,39 @@
+.blur-section {
+  opacity: 0;
+  filter: blur(2px);
+  transform: translateY(6px) translateZ(10px);
+  animation: blur-animation 0.3s ease forwards;
+  animation-delay: var(--blur-delay);
+}
+
+.experience-item.open > div:last-child {
+  max-height: 100px;
+  transition: all 0.3s ease-in;
+}
+
+.experience-item.open > div:last-child > span {
+  opacity: 1;
+}
+
+.experience-item.open > div:nth-child(3) {
+  transform: rotate(45deg);
+}
+
+div#experience > div:last-child > div::before {
+  width: 0px;
+  height: 0px;
+}
+
+@keyframes blur-animation {
+  from {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateY(10px) translateZ(10px);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0px) translateZ(0px);
+  }
+}

@@ -12,8 +12,10 @@ export default {
         'grey-primary': '#444444',
         'grey-secondary': '#777777',
         'grey-disabled': '#efefef4d',
+        'light-grey': '#a3a3a3',
         backdrop: '#00000080',
-        'input-border': '#3d3f45'
+        'input-border': '#3d3f45',
+        'muted-foreground': '#737373'
       },
       fontFamily: {}
     }
