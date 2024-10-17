@@ -235,7 +235,7 @@ About
 }, "/Users/user/Documents/otros/portfolio/src/components/Nav.astro", void 0);
 
 const $$Header = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate`${maybeRenderHead()}<header class="relative mx-auto flex justify-end gap-4 mb-6"> ${renderComponent($$result, "Nav", $$Nav, { "client:load": true, "client:component-hydration": "load", "client:component-path": "/Users/user/Documents/otros/portfolio/src/components/Nav.astro", "client:component-export": "default" })} ${renderComponent($$result, "ThemeToggle", ThemeToggle, { "client:load": true, "client:component-hydration": "load", "client:component-path": "@components/ThemeToggle.tsx", "client:component-export": "default" })} ${renderComponent($$result, "LanguagePicker", $$LanguagePicker, {})} </header>`;
+  return renderTemplate`${maybeRenderHead()}<header class="relative mx-auto flex justify-end gap-4 mb-6"> ${renderComponent($$result, "Nav", $$Nav, {})} ${renderComponent($$result, "ThemeToggle", ThemeToggle, { "client:load": true, "client:component-hydration": "load", "client:component-path": "@components/ThemeToggle.tsx", "client:component-export": "default" })} ${renderComponent($$result, "LanguagePicker", $$LanguagePicker, {})} </header>`;
 }, "/Users/user/Documents/otros/portfolio/src/components/Header.astro", void 0);
 
 const $$About = createComponent(($$result, $$props, $$slots) => {
@@ -553,7 +553,7 @@ createCollectionToGlobResultMap({
 });
 
 let lookupMap = {};
-lookupMap = {"education":{"type":"content","entries":{"en/scrum":"/src/content/education/en/scrum.md","en/neoland":"/src/content/education/en/neoland.md","en/uem":"/src/content/education/en/uem.md","en/upm":"/src/content/education/en/upm.md","es/neoland":"/src/content/education/es/neoland.md","es/scrum":"/src/content/education/es/scrum.md","es/upm":"/src/content/education/es/upm.md","es/uem":"/src/content/education/es/uem.md"}},"experience":{"type":"content","entries":{"es/eqa_dev":"/src/content/experience/es/eqa_dev.md","es/accom":"/src/content/experience/es/accom.md","es/eqa_pm":"/src/content/experience/es/eqa_pm.md","es/nailted":"/src/content/experience/es/nailted.md","en/accom":"/src/content/experience/en/accom.md","en/eqa_pm":"/src/content/experience/en/eqa_pm.md","en/eqa_dev":"/src/content/experience/en/eqa_dev.md","en/nailted":"/src/content/experience/en/nailted.md"}}};
+lookupMap = {"experience":{"type":"content","entries":{"en/eqa_dev":"/src/content/experience/en/eqa_dev.md","en/eqa_pm":"/src/content/experience/en/eqa_pm.md","en/nailted":"/src/content/experience/en/nailted.md","es/accom":"/src/content/experience/es/accom.md","en/accom":"/src/content/experience/en/accom.md","es/eqa_dev":"/src/content/experience/es/eqa_dev.md","es/eqa_pm":"/src/content/experience/es/eqa_pm.md","es/nailted":"/src/content/experience/es/nailted.md"}},"education":{"type":"content","entries":{"en/neoland":"/src/content/education/en/neoland.md","en/scrum":"/src/content/education/en/scrum.md","es/neoland":"/src/content/education/es/neoland.md","es/scrum":"/src/content/education/es/scrum.md","es/uem":"/src/content/education/es/uem.md","en/uem":"/src/content/education/en/uem.md","es/upm":"/src/content/education/es/upm.md","en/upm":"/src/content/education/en/upm.md"}}};
 
 new Set(Object.keys(lookupMap));
 

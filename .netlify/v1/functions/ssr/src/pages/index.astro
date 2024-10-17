@@ -1,0 +1,12 @@
+---
+import Base from '@layouts/Base.astro';
+import Common from '@components/Common.astro';
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Base title={t('Hello!')}>
+  <Common />
+</Base>
