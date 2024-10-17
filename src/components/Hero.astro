@@ -6,7 +6,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const getYearsOfExperience = () => {
-  const startDate = new Date(2020, 8, 1); // October is month 9 (0-indexed)
+  const startDate = new Date(2021, 1, 1); // Feb is month 1 (0-indexed)
   const currentDate = new Date();
   const diffInYears = (currentDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24 * 365.25);
   return Math.floor(diffInYears);
@@ -15,11 +15,19 @@ const getYearsOfExperience = () => {
 const yearsOfExperience = getYearsOfExperience();
 ---
 
-<div class="flex items-center gap-5 sm:gap-7 mt-12 max-w-3xl text-center sm:text-left mb-5">
+<div
+  id="hero"
+  class="blur-section flex items-center gap-5 sm:gap-7 mt-12 max-w-3xl text-center sm:text-left mb-5"
+  style={{ '--blur-delay': '0.1s' }}
+>
   <div
     class="rounded-full flex-shrink-0 bg-green-400 w-24 h-24 sm:w-32 sm:h-32 flex justify-center overflow-hidden"
   >
-    <img src="/imgs/miguel_avatar.png" class="w-40 max-w-none translate-x-2 rotate-12" alt="Miguel Mercado" />
+    <img
+      src="/images/miguel_avatar.png"
+      class="w-40 max-w-none translate-x-1 translate-y-1 rotate-12"
+      alt="Miguel Mercado"
+    />
   </div>
   <div>
     <div class="flex items-center gap-2 sm:gap-4 mb-2 sm:mb-4">

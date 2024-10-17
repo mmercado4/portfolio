@@ -3,7 +3,7 @@ position: 2
 company: 'Accom'
 jobPosition: 'Full Stack Developer'
 period: 'Dic 2021 - Sept 2022'
-logo: 'logo-accom.png'
+logo: 'logo-accom.jpg'
 stack: 'php, javascript, reactJs, Sass, MongoDb, Code Igniter'
 url: 'https://www.we-accom.com/'
 ---

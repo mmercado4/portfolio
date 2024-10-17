@@ -1,0 +1,62 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import { Fragment } from 'astro/compiler-runtime';
+import { getLangFromUrl } from '@i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+
+const experienceEntries = await getCollection('experience', (entry: CollectionEntry<'experience'>) => {
+  return entry.slug.split('/')[0] === lang;
+});
+
+const compareExperience = (entryA: CollectionEntry<'experience'>, entryB: CollectionEntry<'experience'>) => {
+  return entryA.data.position > entryB.data.position ? 1 : -1;
+};
+---
+
+<div class="w-full mb-6 blur-section" id="experience" style={{ '--blur-delay': '0.5s' }}>
+  <div class="text-lg font-bold mb-2">Work experience</div>
+  {
+    experienceEntries.sort(compareExperience).map((entry: any) => (
+      <div class="flex h-fit gap-x-3 mb-3">
+        <div>
+          <a href={entry.data.url} target="_blank" rel="noopener noreferrer">
+            <div class="h-12 w-12 rounded-full relative bg-light border border-grey-line z-10 flex justify-center items-center overflow-hidden">
+              <img src={`/images/${entry.data.logo}`} class="w-9 cursor-pointer" alt="Miguel Mercado" />
+            </div>
+          </a>
+        </div>
+        <div
+          id={entry.id}
+          class="experience-item grid grid-cols-[1fr_auto_14px] grid-rows-[48px_auto] w-full gap-x-4 items-center cursor-pointer overflow-hidden"
+        >
+          <div>
+            <div class="text-sm font-semibold">{entry.data.company}</div>
+            <div class="text-xs">{entry.data.jobPosition}</div>
+          </div>
+          <div class="text-sm text-grey-secondary tracking-widest">{entry.data.period}</div>
+          <div class="w-2 h-2 border-b-2 border-r-2 -rotate-45 border-dark dark:border-light justify-self-center transition-all duration-300" />
+          <div class="col-span-3 max-h-0 transition-all duration-200 ease-in">
+            <span class="pt-2 inline-block text-sm opacity-0 transition-opacity duration-300">
+              {entry.body}
+            </span>
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<script>
+  const items = document.querySelectorAll('.experience-item');
+
+  for (const item of items) {
+    item.addEventListener('click', () => {
+      const description = item.children[3] as HTMLDivElement;
+      const descriptionHeight = description.scrollHeight;
+
+      description.style.maxHeight = item.classList.contains('open') ? '0px' : `${descriptionHeight}px`;
+      item.classList.contains('open') ? item.classList.remove('open') : item.classList.add('open');
+    });
+  }
+</script>
