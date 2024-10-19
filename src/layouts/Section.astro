@@ -1,0 +1,8 @@
+---
+const { title, blurDelay } = Astro.props;
+---
+
+<div class="w-full mb-8 blur-section" id="experience" style={{ '--blur-delay': `${blurDelay}s` }}>
+  <div class="text-lg font-bold mb-2">{title}</div>
+  <slot />
+</div>

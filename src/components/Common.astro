@@ -4,14 +4,27 @@ import Header from './Header.astro';
 import About from './About.astro';
 import Experience from './Experience.astro';
 import Education from './Education.astro';
+import Skills from './Skills.astro';
+import Section from '../layouts/Section.astro';
+
+import { useTranslations } from '@i18n/utils';
+import { getLangFromUrl } from '@i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <main class="container max-w-3xl sm:p-4 p-3 mx-auto">
   <Header />
   <Hero />
-  <About />
-  <Experience />
-  <Education />
-  <div class="h-svh w-full bg-green-200" id="projects"></div>
-  <div class="h-svh w-full bg-brown-200" id="footer"></div>
+  <Section title={t('About me')} blurDelay={0.3}>
+    <About />
+  </Section>
+  <Section title={t('Work experience')} blurDelay={0.5}>
+    <Experience />
+  </Section>
+  <Section title={t('Education')} blurDelay={0.7}>
+    <Education />
+  </Section>
+  <Section title={t('Skills')} blurDelay={0.9}><Skills /></Section>
 </main>

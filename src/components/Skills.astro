@@ -1,0 +1,30 @@
+---
+const skills = [
+  'Javascript',
+  'Typescript',
+  'Angular',
+  'React',
+  'VueJs',
+  'NodeJs',
+  'FeathersJs',
+  'php',
+  'CodeIgniter',
+  'Sequelize',
+  'PostgreSQL',
+  'MongoDB',
+  'Clickhouse',
+  'MySQL',
+  'Cypress',
+  'Mocha'
+];
+---
+
+<div class="flex flex-wrap items-center gap-2">
+  {
+    skills.map((skill) => (
+      <div class="w-auto rounded-md bg-dark text-light dark:bg-light dark:text-dark block px-2 py-1 text-sm">
+        {skill}
+      </div>
+    ))
+  }
+</div>
