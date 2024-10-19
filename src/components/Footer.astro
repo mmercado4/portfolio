@@ -1,0 +1,30 @@
+---
+
+---
+
+<footer
+  class="min-h-8 my-5 w-full flex justify-center items-center blur-section"
+  style={{ '--blur-delay': `1.1s` }}
+>
+  <div class="text-xs flex items-center">
+    <span>Made with</span>
+    <img id="astro-icon" src="" class="w-5 ml-1" alt="astro-icon" />
+  </div>
+</footer>
+
+<script>
+  const html = document.querySelector('html');
+
+  const updateIcon = () => {
+    const icon = html?.classList.contains('dark') ? '/icons/astro_white.svg' : '/icons/astro_black.svg';
+    const image: HTMLImageElement | null = document.querySelector('#astro-icon');
+    if (image) image.src = icon;
+  };
+
+  updateIcon();
+
+  const observer = new MutationObserver(() => {
+    updateIcon();
+  });
+  observer.observe(html as HTMLElement, { attributes: true, attributeFilter: ['class'] });
+</script>
