@@ -7,6 +7,7 @@ import Education from './Education.astro';
 import Skills from './Skills.astro';
 import Section from '../layouts/Section.astro';
 import Footer from './Footer.astro';
+import Projects from './Projects.astro';
 
 import { useTranslations } from '@i18n/utils';
 import { getLangFromUrl } from '@i18n/utils';
@@ -18,15 +19,16 @@ const t = useTranslations(lang);
 <main class="container max-w-3xl sm:p-4 p-3 mx-auto">
   <Header />
   <Hero />
-  <Section title={t('About me')} blurDelay={0.3}>
+  <Section id="about" title={t('About me')} blurDelay={0.3}>
     <About />
   </Section>
-  <Section title={t('Work experience')} blurDelay={0.5}>
+  <Section id="experience" title={t('Work experience')} blurDelay={0.5}>
     <Experience />
   </Section>
-  <Section title={t('Education')} blurDelay={0.7}>
+  <Section id="education" title={t('Education')} blurDelay={0.7}>
     <Education />
   </Section>
-  <Section title={t('Skills')} blurDelay={0.9}><Skills /></Section>
+  <Section id="skills" title={t('Skills')} blurDelay={0.9}><Skills /></Section>
+  <Projects />
 </main>
 <Footer />

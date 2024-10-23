@@ -1,0 +1,46 @@
+---
+import { useTranslations } from '@i18n/utils';
+import { getLangFromUrl } from '@i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const supperStack = ['Typescript', 'NodeJs', 'Sequelize', 'PostgreSQL', 'React', 'amqp'];
+---
+
+<div class="w-full blur-section mt-16" id="projects" style={{ '--blur-delay': '1.1s' }}>
+  <div class="w-full flex justify-center mb-4">
+    <div class="w-fit px-2 py-1 text-sm bg-dark dark:bg-light text-light dark:text-dark font-bold rounded">
+      {t('My projects')}
+    </div>
+  </div>
+  <div class="text-4xl sm:text-5xl font-bold text-center mb-3">
+    {t('Check out my personal work')}
+  </div>
+  <div class="text-xl sm:text-2xl text-grey-secondary dark:text-light-grey text-center mb-5">
+    {t('In my free time, I love to keep learning and developing new things. These are my latest projects.')}
+  </div>
+  <div class="w-full flex justify-center items-center h-16 overflow-hidden mb-4">
+    <img src="/images/supper-logo.png" alt="supper" class="h-40" />
+  </div>
+  <div class="text-md sm:text-lg text-center mb-4 text-grey-secondary tracking-widest">
+    {t('October 2023 - Present')}
+  </div>
+  <div class="text-sm sm:text-md mb-4">
+    {
+      t(
+        'Supper is a web application for managing a nutrition clinic. It allows you to manage patients, track their progress, monitor conditions, consult food information, send results to patients via email, and more. Nutritional plans will be available soon.'
+      )
+    }
+  </div>
+  <div class="flex flex-wrap items-center gap-2 mb-4">
+    {
+      supperStack.map((skill) => (
+        <div class="w-auto rounded-md bg-dark text-light dark:bg-light dark:text-dark block px-2 py-1 text-sm">
+          {skill}
+        </div>
+      ))
+    }
+  </div>
+  <video src="/videos/supper.mp4" class="rounded" autoplay loop></video>
+</div>
