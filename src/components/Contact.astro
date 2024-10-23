@@ -1,0 +1,18 @@
+---
+import { useTranslations } from '@i18n/utils';
+import { getLangFromUrl } from '@i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div class="flex justify-center blur-section" id="projects" style={{ '--blur-delay': '1.3s' }}>
+  <a
+    class="inline-flex transition-all border-neutral-700 hover:border-opacity-0 border-opacity-50 shadow rounded-md border backdrop-blur-xl bg-neutral-400/10 px-3 py-2.5 items-center text-white font-semibold group p-2 text-sm gap-x-3"
+    href="mailto:m.mercadosalgado@gmail.com"
+    target="_blank"
+  >
+    <span class="text-lg sm:text-xl tracking-wide">{t('Email me')}</span>
+    <span class="w-2 h-2 block rounded-full bg-green-400"></span>
+  </a>
+</div>

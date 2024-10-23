@@ -8,6 +8,7 @@ import Skills from './Skills.astro';
 import Section from '../layouts/Section.astro';
 import Footer from './Footer.astro';
 import Projects from './Projects.astro';
+import Contact from './Contact.astro';
 
 import { useTranslations } from '@i18n/utils';
 import { getLangFromUrl } from '@i18n/utils';
@@ -30,5 +31,6 @@ const t = useTranslations(lang);
   </Section>
   <Section id="skills" title={t('Skills')} blurDelay={0.9}><Skills /></Section>
   <Projects />
+  <Contact />
 </main>
 <Footer />

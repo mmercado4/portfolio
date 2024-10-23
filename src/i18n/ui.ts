@@ -23,7 +23,8 @@ export const ui = {
       'In my free time, I love to keep learning and developing new things. These are my latest projects.',
     'October 2023 - Present': 'October 2023 - Present',
     'Supper is a web application for managing a nutrition clinic. It allows you to manage patients, track their progress, monitor conditions, consult food information, send results to patients via email, and more. Nutritional plans will be available soon.':
-      'Supper is a web application for managing a nutrition clinic. It allows you to manage patients, track their progress, monitor conditions, consult food information, send results to patients via email, and more. Nutritional plans will be available soon.'
+      'Supper is a web application for managing a nutrition clinic. It allows you to manage patients, track their progress, monitor conditions, consult food information, send results to patients via email, and more. Nutritional plans will be available soon.',
+    'Email me': 'Email me'
   },
   es: {
     'Hello!': 'Hola',
@@ -43,6 +44,7 @@ export const ui = {
       'Durante mi tiempo libre me encanta seguir aprendiendo y desarrollando cosas nuevas. Estos son mis últimos proyectos.',
     'October 2023 - Present': 'Octubre 2023 - Presente',
     'Supper is a web application for managing a nutrition clinic. It allows you to manage patients, track their progress, monitor conditions, consult food information, send results to patients via email, and more. Nutritional plans will be available soon.':
-      'Supper es una aplicación web para la gestión de una clínica de nutrición. Se pueden gestionar sus pacientes, el control de su progreso, patologías, consulta de alimentos, envíar resultados al paciente por correo, etc. Próximamente se podrán preparar planes nutricionales.'
+      'Supper es una aplicación web para la gestión de una clínica de nutrición. Se pueden gestionar sus pacientes, el control de su progreso, patologías, consulta de alimentos, envíar resultados al paciente por correo, etc. Próximamente se podrán preparar planes nutricionales.',
+    'Email me': 'Escríbeme'
   }
 } as const;
